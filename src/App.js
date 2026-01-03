@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { Routes, Route, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import './App.css';
 import { recipesData, featuredTags } from './data/recipes';
+import { Heart } from 'lucide-react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import TagFilter from './components/TagFilter';
@@ -249,7 +250,10 @@ const RecipeDetailPage = () => {
       <div className="app">
         <Header />
         <div className="detail-content">
-          <h2>Receta no encontrada</h2>
+          <h2 style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+            <Heart size={28} style={{ color: 'var(--color-primario)' }} />
+            No encontré respuestas
+          </h2>
           <button onClick={handleBackToList}>Volver al inicio</button>
         </div>
         <Footer />
