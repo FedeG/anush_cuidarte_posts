@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { Routes, Route, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import './App.css';
 import { recipesData, featuredTags } from './data/recipes';
-import { Clock } from 'lucide-react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import TagFilter from './components/TagFilter';
@@ -20,7 +19,7 @@ const RecipeList = () => {
   const [selectedTag, setSelectedTag] = useState(searchParams.get('tag') || 'Todas');
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get('page')) || 1);
   const [showAutocomplete, setShowAutocomplete] = useState(false);
-  const [showEasyOnly, setShowEasyOnly] = useState(searchParams.get('easy') === 'true');
+  const [showEasyOnly] = useState(searchParams.get('easy') === 'true');
   const isInitialLoad = useRef(true);
   const recipesPerPage = 6;
 
