@@ -178,7 +178,7 @@ const RecipeList = () => {
         <div className="results-info">
           <h2>
             {filteredRecipes.length > 0 
-              ? `Encontramos ${filteredRecipes.length} respuestas para vos`
+              ? `Hay ${filteredRecipes.length} respuestas para vos`
               : 'No encontramos respuestas con esos filtros'}
           </h2>
         </div>
